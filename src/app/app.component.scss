@@ -1,7 +1,4 @@
 .main {
-    // padding-left: 20.5rem;
-    // padding-right: 5rem;
-    // padding-top: 12rem;
     width: 60rem;
     max-width: 90%;
     margin: 12rem auto 4rem auto;
@@ -302,12 +299,16 @@
             }
 
             .steps {
-                display: flex;
+                display: none;
                 flex-direction: row;
                 justify-content: flex-start;
                 margin: 1rem 0;
                 height: 0.25rem;
                 gap: 1rem;
+
+                @media (max-width: 768px) {
+                    display: flex;
+                  }
 
                 .step {
                     width: 100%;

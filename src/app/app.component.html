@@ -1,191 +1,41 @@
 <main class="main">
-  <header class="header">
-     <div class="left">
-          <button class="back">
-               <img class="icon" src="assets/icons/right-arrow.svg" />
-               <span>
-                    Back
-               </span>
-          </button>
-          <button class="create-new">
-               <div class="dot"></div>
-               <div class="text"> Create new article </div>
-          </button>
-     </div>
-     <div class="right">
-          <div class="info">
-               <img class="icon" src="assets/icons/Info.svg" />
-           Lorem ipsum dolore
-          </div>
-          <button class="exit">
-           I'm exiting the process
-          </button>
-     </div>
-  </header>
-  <header class="header-mobile">
-    <button class="back">
-      <img class="icon" src="assets/icons/right-arrow.svg" />
-      <span>
-           Back
-      </span>
-    </button>
-    <div class="create-new">
-      <span>
-         Create a new article
-      </span>
-      <img class="icon" src="assets/icons/iconsdissmiss.svg" />
-    </div>
-  </header>
-  <section class="tabs">
-     <ul class="progressbar">
-          <li class="active">Basic information</li>
-          <li>Additional data</li>
-          <li>Edit article</li>
-          <li>Sum</li>
-     </ul>
-  </section>
-  <section class="form-container">
-      <form [formGroup]="basicInfoForm" (ngSubmit)="handleSubmit()" class="form">
-        <h3 class="heading">
-          Alap információk
-        </h3>
-
-        <h3 class="heading-mobile"> 1. Basic information </h3>
-        <div class="steps">
-          <div class="step active"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
+    <header class="header">
+       <div class="left">
+            <button class="back">
+                 <img class="icon" src="assets/icons/right-arrow.svg" />
+                 <span>
+                      Back
+                 </span>
+            </button>
+            <button class="create-new">
+                 <div class="dot"></div>
+                 <div class="text"> Create new article </div>
+            </button>
        </div>
-
-        <div class="form-elements">
-            <div class="left">
-              <div class="form-group">
-                <label for="articleLang">Article language</label>
-                <select id="articleLang" name="articleLang" formControlName="articleLang">
-                  <option value="english" selected>English</option>
-                  <option value="hungarian">Hungarian</option>
-                </select>
-              </div>
-      
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" placeholder="Enter the title of the article" name="address" formControlName="address" />
-              </div>
-      
-              <div class="form-group">
-                <label for="subtitle">Subtitle</label>
-                <textarea type="text" id="subtitle" placeholder="Enter the subtitle of the article" name="subtitle" formControlName="subtitle"></textarea>
-              </div>
-      
-              <div class="form-group">
-                <label for="metaTitle">
-                     <div>Meta title <span class="msg"> (max. 75 characters) </span> </div>
-                     <img class="icon" src="assets/icons/Info.svg" />
-                </label>
-                <input type="text" id="metaTitle" placeholder="Short title" name="metaTitle" formControlName="metaTitle" />
-              </div>
-      
-              <div class="form-group">
-                <label for="metaDescription">
-                     <div>Meta description <span class="msg"> (max. 110 characters) </span> </div>
-                     <img class="icon" src="assets/icons/Info.svg" />
-                </label>
-                <textarea type="text" id="metaDescription" placeholder="Short description" name="metaDescription" formControlName="metaDescription"></textarea>
-              </div>
-      
-              <div class="form-group">
-                <label for="coverImgTitle">
-                     <div>Cover image title <span class="msg"> (ALT text) </span> </div>
-                     <img class="icon" src="assets/icons/Info.svg" />
-                </label>
-                <input type="text" id="coverImgTitle" placeholder="Image title" name="coverImgTitle" formControlName="coverImgTitle" />
-              </div>
-      
-              <div class="form-group">
-                    <label for="author">Author</label>
-                    <div class="select_list" id="selectList" [ngClass]="{ active: isActive }" (click)="toggleActive()" (outsideClick)="isActive = false" outsideClick>
-                    <div class="author-info">
-                      <img [src]="selectedAuthor.url" *ngIf="selectedAuthor" alt="Author Image" />
-                      <div *ngIf="selectedAuthor">{{ selectedAuthor.name }}</div>
-                    </div>
-                    
-                      <ul class="options">
-                            <li class="select_list_option" *ngFor="let author of authorList" (click)="selectAuthor(author)">
-                            <div class="author-info">
-                              <img [src]="author.url" alt="Author Image" />
-                              <div>{{ author.name }}</div>
-                            </div>
-                          </li>
-                      </ul>
-                    </div>
-              </div>
-      
-              <div class="form-group">
-                <label for="articleType">Article type</label>
-                <select id="articleType" name="articleType" formControlName="articleType">
-                  <option value="" selected disabled class="placeholder"> Choose a type </option>
-                  <option value="Type A">Type A</option>
-                  <option value="Type B">Type B</option>
-                </select>
-              </div>
-      
-              <div class="form-group">
-                <label for="address">Choose a date</label>
-                <input type="date" id="articleDate" placeholder="Choose a date" name="articleDate" formControlName="articleDate"  />
-              </div>
+       <div class="right">
+            <div class="info">
+                 <img class="icon" src="assets/icons/Info.svg" />
+                  Lorem ipsum dolore
             </div>
-
-            <div class="right">
-              <div class="form-group">
-                <label for="subtitle">Upload cover image</label>
-                <div class="upload-box">
-                  <img class="icon" src="assets/icons/image.svg" />
-                  <button class="btn-upload">
-                    File upload
-                  </button>
-                </div>
-                <p class="helper-text">
-                  Recommended file size: max. 1MB
-                </p>
-                <p class="helper-text">
-                  .jpg or .png format
-                </p>
-              </div>
-            </div>
-        </div>
-
-        <div class="footer">
-          <div class="switch-container">
-            <div class="switch">
-              <span>
-                Article pr
-              </span>
-              <label class="toggle">
-                <input type="checkbox">
-                <span class="slider"></span>
-              </label>
-            </div>
-            <div class="switch">
-              <div class="text">
-                Featured article
-              </div>
-              <label class="toggle">
-                <input type="checkbox">
-                <span class="slider"></span>
-              </label>
-            </div>
-          </div>
-          <div class="btn-container">
-            <div class="btns">
-              <button class="btn-tertiary">Cancel</button>
-              <button disabled class="btn-primary">Next</button>
-            </div>
-            <div class="instruction">
-             All field is required!
-            </div>
-          </div>
-        </div>
-      </form>
-  </section>
-</main>
+            <button class="exit">
+             I'm exiting the process
+            </button>
+       </div>
+    </header>
+    <header class="header-mobile">
+      <button class="back">
+        <img class="icon" src="assets/icons/right-arrow.svg" />
+        <span>
+             Back
+        </span>
+      </button>
+      <div class="create-new">
+        <span>
+           Create a new article
+        </span>
+        <img class="icon" src="assets/icons/iconsdissmiss.svg" />
+      </div>
+    </header>
+    <app-stepper></app-stepper>
+  </main>
+  
