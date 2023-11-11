@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    line-height: normal;
+    width: 100%;
+    background-color: var(--color-orange-medium-light);
+  }
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */ 
+  background: url('/assets/icons/chevron-down.svg') white no-repeat 98.5% !important; 
+  background: url('/assets/icons/chevron-down.svg') white no-repeat calc(100% - 10px) !important; 
+}
+
