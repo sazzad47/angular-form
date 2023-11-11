@@ -22,6 +22,20 @@
           </button>
      </div>
   </header>
+  <header class="header-mobile">
+    <button class="back">
+      <img class="icon" src="assets/icons/right-arrow.svg" />
+      <span>
+           Back
+      </span>
+    </button>
+    <div class="create-new">
+      <span>
+         Create a new article
+      </span>
+      <img class="icon" src="assets/icons/iconsdissmiss.svg" />
+    </div>
+  </header>
   <section class="tabs">
      <ul class="progressbar">
           <li class="active">Basic information</li>
@@ -35,6 +49,14 @@
         <h3 class="heading">
           Alap információk
         </h3>
+
+        <h3 class="heading-mobile"> 1. Basic information </h3>
+        <div class="steps">
+          <div class="step active"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+       </div>
 
         <div class="form-elements">
             <div class="left">
@@ -58,7 +80,7 @@
       
               <div class="form-group">
                 <label for="metaTitle">
-                     <div>Meta title (max. 75 characters)</div>
+                     <div>Meta title <span class="msg"> (max. 75 characters) </span> </div>
                      <img class="icon" src="assets/icons/Info.svg" />
                 </label>
                 <input type="text" id="metaTitle" placeholder="Short title" name="metaTitle" formControlName="metaTitle" />
@@ -66,7 +88,7 @@
       
               <div class="form-group">
                 <label for="metaDescription">
-                     <div>Meta description (max. 110 characters)</div>
+                     <div>Meta description <span class="msg"> (max. 110 characters) </span> </div>
                      <img class="icon" src="assets/icons/Info.svg" />
                 </label>
                 <textarea type="text" id="metaDescription" placeholder="Short description" name="metaDescription" formControlName="metaDescription"></textarea>
@@ -74,7 +96,7 @@
       
               <div class="form-group">
                 <label for="coverImgTitle">
-                     <div>Cover image title (ALT text)</div>
+                     <div>Cover image title <span class="msg"> (ALT text) </span> </div>
                      <img class="icon" src="assets/icons/Info.svg" />
                 </label>
                 <input type="text" id="coverImgTitle" placeholder="Image title" name="coverImgTitle" formControlName="coverImgTitle" />

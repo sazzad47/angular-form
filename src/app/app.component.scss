@@ -4,7 +4,7 @@
     // padding-top: 12rem;
     width: 60rem;
     max-width: 90%;
-    margin: 12rem auto;
+    margin: 12rem auto 4rem auto;
   
     .header {
       width: 100%;
@@ -121,6 +121,62 @@
       
     }
 
+    .header-mobile {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 768px) {
+            display: flex;
+          }
+
+        .back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            
+            .icon {
+                width: 1rem;
+                height: 1rem;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+  
+            span {
+              color: var(--color-blue-dark, #102733);
+              font-family: var(--font-lexend, 'Lexend');
+              font-size: var(--font-size-base, 1rem);
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+        
+        .create-new {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.25rem;
+
+            span {
+                font-size: 1.25rem;
+                line-height: 1.5rem;
+                font-weight: 600;
+            }
+
+            .icon {
+                width: 1.25rem;
+                height: 1.25rem;
+                overflow: hidden;
+            }
+        }
+    }
+
     .tabs {
         margin-top: 1.31rem;
         width: 100%;
@@ -208,6 +264,10 @@
         .form {
             padding: 1.31rem 2.12rem;
 
+            @media (max-width: 768px) {
+                padding: 1rem;
+              }
+
             .heading {
                 color: var(--color-purple-medium, #54237C);
                 font-family: Lexend;
@@ -218,7 +278,50 @@
                 margin: 0;
                 padding: 0;
                 margin-bottom: 1.4rem;
+                display: block;
+
+                @media (max-width: 768px) {
+                    display: none;
+                  }
             }
+
+            .heading-mobile {
+                color: var(--color-purple-medium, #54237C);
+                font-family: Lexend;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; 
+                margin: 0;
+                padding: 0;
+                display: none;
+
+                @media (max-width: 768px) {
+                    display: block;
+                  }
+            }
+
+            .steps {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin: 1rem 0;
+                height: 0.25rem;
+                gap: 1rem;
+
+                .step {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: var(--br-81xl);
+                    background-color: var(--color-inactive);
+
+                    &.active {
+                        background-color: var(--color-primary-purple);
+                    }
+                    
+                }
+    
+              }
 
             .form-elements {
                 width: 100%;
@@ -468,7 +571,9 @@
                         line-height: normal;
                     }
                     
-                   
+                    .msg {
+                        color: var(--color-primary-purple);
+                    }
                 }
             }
 
@@ -643,6 +748,11 @@
                     font-style: normal;
                     font-weight: 300;
                     line-height: 1rem; 
+                    order: 2;
+                    @media (max-width: 768px) {
+                        order: 1;
+                       
+                      }
                 }
             }
             
