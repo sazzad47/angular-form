@@ -1,14 +1,20 @@
 .main {
-    margin-left: 20.5rem;
-    margin-right: 5rem;
-    margin-top: 12rem;
-    min-height: 200vh;
+    // padding-left: 20.5rem;
+    // padding-right: 5rem;
+    // padding-top: 12rem;
+    width: 60rem;
+    max-width: 90%;
+    margin: 12rem auto;
   
     .header {
       width: 100%;
       display: flex;
       justify-content: space-between;
       gap: 1.5rem;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
   
       .left {
         display: flex;
@@ -123,6 +129,10 @@
         background: rgba(255, 255, 255, 0.70);
         display: flex;
         align-items: center;
+
+        @media (max-width: 768px) {
+            display: none;
+          }
        
         .progressbar {
             counter-reset: step;
@@ -137,7 +147,6 @@
               height: 100%;
               position: relative;
               text-align: start;
-              cursor: pointer; 
               color: var(--color-grey-medium, #9FA9AD);
               font-family: Lexend;
               font-size: 0.875rem;
@@ -159,6 +168,7 @@
                 position: absolute;
                 top: 60%;
                 background-color: #fff;
+                cursor: pointer; 
               }
           
               &:after {
@@ -213,14 +223,28 @@
             .form-elements {
                 width: 100%;
                 display: flex;
+                flex-direction: row;
                 gap: 2rem;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 0;
+                  }
 
                 .left {
                     width: 60%;
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                      }
                 }
                 
                 .right {
                     flex: 1;
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                      }
                 }
 
                 .form-group {
@@ -457,15 +481,28 @@
             flex-direction: column;
             margin-top: 1rem;
 
+            @media (max-width: 768px) {
+                width: 100%;
+              }
+
             .switch-container {
                 display: flex;
                 gap: 2rem;
                 margin-bottom: 2rem;
 
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 1rem;
+                  }
+
                 .switch {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
+
+                    @media (max-width: 768px) {
+                        justify-content: space-between;
+                      }
 
                     .text {
                         color: var(--color-blue-dark, #102733);
@@ -532,12 +569,26 @@
             .btn-container {
                 width: 100%;
                 display: flex;
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
 
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 1rem;
+                  }
+
                 .btns {
                     display: flex;
+                    flex-direction: row;
                     gap: 1rem;
+                    order: 1;
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        order: 2;
+                        width: 100%;
+                      }
     
                     .btn-tertiary {
                         display: flex;
@@ -554,6 +605,11 @@
                         font-weight: 400;
                         line-height: normal;
                         cursor: pointer;
+
+                        @media (max-width: 768px) {
+                            width: 100%;
+                          }
+        
                     }
         
                     .btn-primary {
@@ -571,6 +627,10 @@
                         font-weight: 400;
                         line-height: normal;
                         border: none;
+
+                        @media (max-width: 768px) {
+                            width: 100%;
+                          }
                     }
                 }
     

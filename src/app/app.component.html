@@ -81,24 +81,22 @@
               </div>
       
               <div class="form-group">
-                <div class="form-group">
-                     <label for="author">Author</label>
-                     <div class="select_list" id="selectList" [ngClass]="{ active: isActive }" (click)="toggleActive()" (outsideClick)="isActive = false" outsideClick>
-                      <div class="author-info">
-                        <img [src]="selectedAuthor.url" *ngIf="selectedAuthor" alt="Author Image" />
-                        <div *ngIf="selectedAuthor">{{ selectedAuthor.name }}</div>
-                      </div>
-                      
-                       <ul class="options">
-                             <li class="select_list_option" *ngFor="let author of authorList" (click)="selectAuthor(author)">
-                              <div class="author-info">
-                                <img [src]="author.url" alt="Author Image" />
-                                <div>{{ author.name }}</div>
-                              </div>
-                            </li>
-                        </ul>
-                     </div>
-                   </div>
+                    <label for="author">Author</label>
+                    <div class="select_list" id="selectList" [ngClass]="{ active: isActive }" (click)="toggleActive()" (outsideClick)="isActive = false" outsideClick>
+                    <div class="author-info">
+                      <img [src]="selectedAuthor.url" *ngIf="selectedAuthor" alt="Author Image" />
+                      <div *ngIf="selectedAuthor">{{ selectedAuthor.name }}</div>
+                    </div>
+                    
+                      <ul class="options">
+                            <li class="select_list_option" *ngFor="let author of authorList" (click)="selectAuthor(author)">
+                            <div class="author-info">
+                              <img [src]="author.url" alt="Author Image" />
+                              <div>{{ author.name }}</div>
+                            </div>
+                          </li>
+                      </ul>
+                    </div>
               </div>
       
               <div class="form-group">
