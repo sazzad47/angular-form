@@ -1,106 +1,108 @@
-
-
-    <section>
-        <form [formGroup]="basicInfoForm" (ngSubmit)="handleSubmit()">
-  
-          <div class="form-elements">
-              <div class="left">
-                <div class="form-group">
+<section>
+  <form [formGroup]="basicInfoForm" (ngSubmit)="handleSubmit()">
+      <div class="form-elements">
+          <div class="left">
+              <div class="form-group">
                   <label for="articleLang">Article language</label>
                   <select id="articleLang" name="articleLang" formControlName="articleLang">
-                    <option value="english" selected>English</option>
-                    <option value="hungarian">Hungarian</option>
+                      <option value="english" selected>English</option>
+                      <option value="hungarian">Hungarian</option>
                   </select>
-                </div>
-        
-                <div class="form-group">
+              </div>
+
+              <div class="form-group">
                   <label for="address">Address</label>
-                  <input type="text" id="address" placeholder="Enter the title of the article" name="address" formControlName="address" />
-                </div>
-        
-                <div class="form-group">
+                  <input type="text" id="address" placeholder="Enter the title of the article" name="address"
+                      formControlName="address" />
+              </div>
+
+              <div class="form-group">
                   <label for="subtitle">Subtitle</label>
-                  <textarea type="text" id="subtitle" placeholder="Enter the subtitle of the article" name="subtitle" formControlName="subtitle"></textarea>
-                </div>
-        
-                <div class="form-group">
+                  <textarea type="text" id="subtitle" placeholder="Enter the subtitle of the article"
+                      name="subtitle" formControlName="subtitle"></textarea>
+              </div>
+
+              <div class="form-group">
                   <label for="metaTitle">
-                       <div>Meta title <span class="msg"> (max. 75 characters) </span> </div>
-                       <img class="icon" src="assets/icons/Info.svg" />
+                      <div>Meta title <span class="msg"> (max. 75 characters) </span> </div>
+                      <img class="icon" src="assets/icons/Info.svg" />
                   </label>
-                  <input type="text" id="metaTitle" placeholder="Short title" name="metaTitle" formControlName="metaTitle" />
-                </div>
-        
-                <div class="form-group">
+                  <input type="text" id="metaTitle" placeholder="Short title" name="metaTitle"
+                      formControlName="metaTitle" />
+              </div>
+
+              <div class="form-group">
                   <label for="metaDescription">
-                       <div>Meta description <span class="msg"> (max. 110 characters) </span> </div>
-                       <img class="icon" src="assets/icons/Info.svg" />
+                      <div>Meta description <span class="msg"> (max. 110 characters) </span> </div>
+                      <img class="icon" src="assets/icons/Info.svg" />
                   </label>
-                  <textarea type="text" id="metaDescription" placeholder="Short description" name="metaDescription" formControlName="metaDescription"></textarea>
-                </div>
-        
-                <div class="form-group">
+                  <textarea type="text" id="metaDescription" placeholder="Short description" name="metaDescription"
+                      formControlName="metaDescription"></textarea>
+              </div>
+
+              <div class="form-group">
                   <label for="coverImgTitle">
-                       <div>Cover image title <span class="msg"> (ALT text) </span> </div>
-                       <img class="icon" src="assets/icons/Info.svg" />
+                      <div>Cover image title <span class="msg"> (ALT text) </span> </div>
+                      <img class="icon" src="assets/icons/Info.svg" />
                   </label>
-                  <input type="text" id="coverImgTitle" placeholder="Image title" name="coverImgTitle" formControlName="coverImgTitle" />
-                </div>
-        
-                <div class="form-group">
-                      <label for="author">Author</label>
-                      <div class="select_list" id="selectList" [ngClass]="{ active: isActive }" (click)="toggleActive()" (outsideClick)="isActive = false" outsideClick>
+                  <input type="text" id="coverImgTitle" placeholder="Image title" name="coverImgTitle"
+                      formControlName="coverImgTitle" />
+              </div>
+
+              <div class="form-group">
+                  <label for="author">Author</label>
+                  <div class="select_list" id="selectList" [ngClass]="{ active: isActive }" (click)="toggleActive()"
+                      (outsideClick)="isActive = false" outsideClick>
                       <div class="author-info">
-                        <img [src]="selectedAuthor.url" *ngIf="selectedAuthor" alt="Author Image" />
-                        <div *ngIf="selectedAuthor">{{ selectedAuthor.name }}</div>
+                          <img [src]="selectedAuthor.url" *ngIf="selectedAuthor" alt="Author Image" />
+                          <div *ngIf="selectedAuthor">{{ selectedAuthor.name }}</div>
                       </div>
-                      
-                        <ul class="options">
-                              <li class="select_list_option" *ngFor="let author of authorList" (click)="selectAuthor(author)">
+
+                      <ul class="options">
+                          <li class="select_list_option" *ngFor="let author of authorList"
+                              (click)="selectAuthor(author)">
                               <div class="author-info">
-                                <img [src]="author.url" alt="Author Image" />
-                                <div>{{ author.name }}</div>
+                                  <img [src]="author.url" alt="Author Image" />
+                                  <div>{{ author.name }}</div>
                               </div>
-                            </li>
-                        </ul>
-                      </div>
-                </div>
-        
-                <div class="form-group">
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="form-group">
                   <label for="articleType">Article type</label>
                   <select id="articleType" name="articleType" formControlName="articleType">
-                    <option value="" selected disabled class="placeholder"> Choose a type </option>
-                    <option value="Type A">Type A</option>
-                    <option value="Type B">Type B</option>
+                      <option value="" selected disabled class="placeholder"> Choose a type </option>
+                      <option value="Type A">Type A</option>
+                      <option value="Type B">Type B</option>
                   </select>
-                </div>
-        
-                <div class="form-group">
-                  <label for="address">Choose a date</label>
-                  <input type="date" id="articleDate" placeholder="Choose a date" name="articleDate" formControlName="articleDate"  />
-                </div>
               </div>
-  
-              <div class="right">
-                <div class="form-group">
-                  <label for="subtitle">Upload cover image</label>
-                  <div class="upload-box">
-                    <img class="icon" src="assets/icons/image.svg" />
-                    <button class="btn-upload">
-                      File upload
-                    </button>
-                  </div>
-                  <p class="helper-text">
-                    Recommended file size: max. 1MB
-                  </p>
-                  <p class="helper-text">
-                    .jpg or .png format
-                  </p>
-                </div>
+
+              <div class="form-group">
+                  <label for="address">Choose a date</label>
+                  <input type="date" id="articleDate" placeholder="Choose a date" name="articleDate"
+                      formControlName="articleDate" />
               </div>
           </div>
-  
-        </form>
-    </section>
 
-  
+          <div class="right">
+              <div class="form-group">
+                  <label for="subtitle">Upload cover image</label>
+                  <div class="upload-box">
+                      <img class="icon" src="assets/icons/image.svg" />
+                      <button class="btn-upload">
+                          File upload
+                      </button>
+                  </div>
+                  <p class="helper-text">
+                      Recommended file size: max. 1MB
+                  </p>
+                  <p class="helper-text">
+                      .jpg or .png format
+                  </p>
+              </div>
+          </div>
+      </div>
+  </form>
+</section>

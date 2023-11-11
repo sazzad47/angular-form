@@ -1,59 +1,49 @@
 <section class="tabs">
   <ul class="progressbar">
-    <li [class.active]="currentStepIndex === 0">Basic information</li>
-    <li [class.active]="currentStepIndex === 1">Additional data</li>
-    <li [class.active]="currentStepIndex === 2">Edit article</li>
-    <li [class.active]="currentStepIndex === 3">Sum</li>
+      <li [class.active]="currentStepIndex === 0" [class.completed]="currentStepIndex > 0">Basic information</li>
+      <li [class.active]="currentStepIndex === 1" [class.completed]="currentStepIndex > 1">Additional data</li>
+      <li [class.active]="currentStepIndex === 2" [class.completed]="currentStepIndex > 2">Edit article</li>
+      <li [class.active]="currentStepIndex === 3" [class.completed]="currentStepIndex > 3">Sum</li>
   </ul>
 </section>
 
 <section class="form-container">
-    <div class="form">
-      <h3 class="heading">
-        {{ currentStep.label }}
-      </h3>
-      
-      <h3 class="heading-mobile"> {{ currentStepIndex + 1 }}. {{ currentStep.label }} </h3>
+  <div class="form">
+      <h3 class="heading">{{ currentStep.label }}</h3>
+      <h3 class="heading-mobile">{{ currentStepIndex + 1 }}. {{ currentStep.label }}</h3>
       <div class="steps">
-        <div class="step active"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+          <div class="step" [class.active]="currentStepIndex === 0" [class.completed]="currentStepIndex > 0"></div>
+          <div class="step" [class.active]="currentStepIndex === 1" [class.completed]="currentStepIndex > 1"></div>
+          <div class="step" [class.active]="currentStepIndex === 2" [class.completed]="currentStepIndex > 2"></div>
+          <div class="step" [class.active]="currentStepIndex === 3" [class.completed]="currentStepIndex > 3"></div>
       </div>
+
       <ng-template dynamicChildLoader=""></ng-template>
 
       <div class="footer">
-        <div class="switch-container">
-          <div class="switch">
-            <span>
-              Article pr
-            </span>
-            <label class="toggle">
-              <input type="checkbox">
-              <span class="slider"></span>
-            </label>
+          <div class="switch-container">
+              <div class="switch">
+                  <span>Article pr</span>
+                  <label class="toggle">
+                      <input type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+              </div>
+              <div class="switch">
+                  <div class="text">Featured article</div>
+                  <label class="toggle">
+                      <input type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+              </div>
           </div>
-          <div class="switch">
-            <div class="text">
-              Featured article
-            </div>
-            <label class="toggle">
-              <input type="checkbox">
-              <span class="slider"></span>
-            </label>
+          <div class="btn-container">
+              <div class="btns">
+                  <button class="btn-tertiary" (click)="onBack()" [disabled]="currentStepIndex === 0">Cancel</button>
+                  <button disabled class="btn-primary" (click)="onNext()" [disabled]="currentStepIndex === steps.length - 1">Next</button>
+              </div>
+              <div class="instruction">All fields are required!</div>
           </div>
-        </div>
-        <div class="btn-container">
-          <div class="btns">
-            <button class="btn-tertiary" (click)="onBack()" [disabled]="currentStepIndex === 0">Cancel</button>
-            <button disabled class="btn-primary" (click)="onNext()" [disabled]="currentStepIndex === steps.length - 1">Next</button>
-          </div>
-          <div class="instruction">
-           All field is required!
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
 </section>
-
-
