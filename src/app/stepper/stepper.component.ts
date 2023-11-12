@@ -6,6 +6,7 @@ import { StepperService } from './stepper.service';
 import { Step } from './step.model';
 import { BasicInfoComponent } from '../basic-info/basic-info.component';
 import { DynamicChildLoaderDirective } from '../shared/directives/dynamic-child-loader.directive';
+import { CommonModule } from '@angular/common';
 
 // Angular Component decorator
 @Component({
@@ -16,7 +17,7 @@ import { DynamicChildLoaderDirective } from '../shared/directives/dynamic-child-
   standalone: true,
 
   // Importing necessary components and directives
-  imports: [BasicInfoComponent, DynamicChildLoaderDirective],
+  imports: [CommonModule, BasicInfoComponent, DynamicChildLoaderDirective],
 
   // Component template and styles
   templateUrl: './stepper.component.html',
